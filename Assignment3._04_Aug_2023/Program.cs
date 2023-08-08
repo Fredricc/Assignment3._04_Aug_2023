@@ -126,6 +126,44 @@ namespace Assignment3._04_Aug_2023
             Console.WriteLine($"\tNo. of Consonants : {ccount}");
             Console.WriteLine($"\tNo. of other-alphabets : {others}");
 
+
+            //String array
+            Console.WriteLine("Enter the size of the array:");
+            int ArrSize = Convert.ToInt32(Console.ReadLine());
+            string?[] stArr = new string[ArrSize];
+
+            Console.WriteLine($"Enter the  {ArrSize}  members of the array.");
+            for (int i = 0; i < stArr.Length; i++)
+            {
+                stArr[i] = Console.In.ReadLine();
+            }
+
+            Console.WriteLine("Your Array is as follows");
+            Console.Write("[ ");
+            for (int i = 0; i < stArr.Length; i++)
+            {
+                Console.Write(stArr[i] + " ");
+            }
+            Console.WriteLine("]");
+
+            // Initialize maximum element
+            string longestString = "";
+            int tr = 0;
+
+            // Traverse array elements from second and
+            // compare every element with current max
+            foreach (String s in stArr)
+            {
+                if (s.Length>tr)
+                {
+                    longestString = s;
+                    tr = s.Length;
+                }
+            }
+
+            Console.WriteLine($"Longest string in given "
+                              + "array is " + longestString);
+
             Console.ReadLine();
         }
 
